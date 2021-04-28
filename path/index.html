@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
 <body>
-  <h1>Hello World!</h1>
+  <h1>SUT X-Lane!</h1>
   <p id="param"><b>Query Param: </b></p>
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
@@ -20,5 +20,28 @@
     const params = new URLSearchParams(queryString);
     document.getElementById("param").append(params.get("param"));
   </script>
+
+<script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+<script>
+  async function getUserProfile() {
+    const profile = await liff.getProfile()
+    document.getElementById("pictureUrl").src = profile.pictureUrl
+    document.getElementById("userId").append(profile.userId)
+    document.getElementById("statusMessage").append(profile.statusMessage)
+    document.getElementById("displayName").append(profile.displayName)
+    document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+  }
+  async function main() {
+    await liff.init({ liffId: "1655379271-kXO6ZNYR"})
+    if (liff.isLoggedIn()){
+      getUserProfile()
+    } else {
+      //liff.login() //old
+      liff.login({reDiractUri: "https://sutxlane.github.io/lineprofile/path"}) //line console> line login > callback URL ใส่ได้มากกว่า1URL
+    }
+  }
+  main()
+</script>
 </body>
+
 </html>
