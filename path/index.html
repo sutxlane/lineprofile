@@ -1,11 +1,12 @@
-<!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Path</title>
-  <link rel="stylesheet" href="css/style.css" media="all">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
   <h1>SUT X-Lane!</h1>
   <p id="param"><b>Query Param: </b></p>
@@ -14,6 +15,7 @@
   <p id="displayName"><b>displayName:</b> </p>
   <p id="statusMessage"><b>statusMessage:</b> </p>
   <p id="decodedIDToken"><b>email:</b> </p>
+
   <script>
     // Query Params
     const queryString = decodeURIComponent(window.location.search);
@@ -23,6 +25,7 @@
 
 <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
 <script>
+  
   async function getUserProfile() {
     const profile = await liff.getProfile()
     document.getElementById("pictureUrl").src = profile.pictureUrl
