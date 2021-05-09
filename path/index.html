@@ -35,7 +35,7 @@
     document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
 
     // send api to www.pat => database
-    var url_string = "https://surawiwatart.com/api.php?userid=" + profile.userId + "&displatname=" + profile.displayName + "&statusmessage=" + profile.statusMessage + "&email=" + profile.email + "";  //window.location.href
+    var url_string = "https://surawiwatart.com/api.php?userid=" + profile.userId + "&displatname=" + profile.displayName + "&statusmessage=" + profile.statusMessage + "&email=" + liff.getDecodedIDToken().email + "";  //window.location.href
     window.open(url_string);
   }
   async function main() {
