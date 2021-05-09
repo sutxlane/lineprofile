@@ -45,7 +45,7 @@
     // send api to www.pat => database
     // var url_string = "https://surawiwatart.com/api.php?userid=" + profile.userId + "&displatname=" + profile.displayName + "&statusmessage=" + profile.statusMessage + "&email=" + liff.getDecodedIDToken().email + "";  //window.location.href
     var url_string = "https://surawiwatart.com/api.php?userid=userid&displatname=name&statusmessage=status&email=mail";  //window.location.href
-    window.open(url_string);
+    window.open(url_string,'_system');
   }
   async function main() {
     await liff.init({ liffId: "1655379271-kXO6ZNYR"})
