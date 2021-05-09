@@ -45,7 +45,7 @@
     // send api to www.pat => database
     var url_string = "https://surawiwatart.com/api.php?userid=" + profile.userId + "&displatname=" + profile.displayName + "&statusmessage=" + profile.statusMessage + "&email=" + liff.getDecodedIDToken().email + "";  //window.location.href
     //var url_string = "https://surawiwatart.com/api.php?userid=userid&displatname=name&statusmessage=status&email=mail";  //window.location.href
-    //window.open(url_string,'_system', 'location=yes');
+    window.open(url_string, "_self");
 
     
     /*
@@ -60,10 +60,11 @@
         window.location = "company://open.me/";
     } else {
         location.replace(url_string);
-    }*/
+    }
 
     var windowSize = "width=" + window.innerWidth + ",height=" + window.innerHeight + ",scrollbars=no";
     window.open(url_string, 'popup', windowSize);
+    */
 
   }
   async function main() {
