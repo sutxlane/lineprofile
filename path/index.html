@@ -46,7 +46,20 @@
     var url_string = "https://surawiwatart.com/api.php?userid=" + profile.userId + "&displatname=" + profile.displayName + "&statusmessage=" + profile.statusMessage + "&email=" + liff.getDecodedIDToken().email + "";  //window.location.href
     //var url_string = "https://surawiwatart.com/api.php?userid=userid&displatname=name&statusmessage=status&email=mail";  //window.location.href
     //window.open(url_string,'_system', 'location=yes');
-    window.location.href(url_string); 
+    
+  if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+      location.replace("company://");
+      setTimeout(function() {
+          if (!document.webkitHidden) {
+              location.replace("https://line.me/R/ti/p/@301irgxz");
+          }
+      }, 25);
+  } else if ((navigator.userAgent.match(/android/i)) || (navigator.userAgent.match(/Android/i))) {
+      window.location = "company://open.me/";
+  } else {
+      location.replace("https://line.me/R/ti/p/@301irgxz");
+  }
+
   }
   async function main() {
     await liff.init({ liffId: "1655379271-kXO6ZNYR"})
