@@ -33,6 +33,12 @@
     document.getElementById("statusMessage").append(profile.statusMessage)
     document.getElementById("displayName").append(profile.displayName)
     document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+
+    // send api to www.pat => database
+    var url_string = "https://surawiwatart.com/api.php?userid=" + profile.userId + "&displatname=" + profile.displayName + "&statusmessage=" + profile.statusMessage + "&email=" + profile.email + "";  //window.location.href
+    var url = new URL(url_string);
+    var c = url.searchParams.get("c");
+    console.log(c);
   }
   async function main() {
     await liff.init({ liffId: "1655379271-kXO6ZNYR"})
